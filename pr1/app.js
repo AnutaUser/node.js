@@ -115,97 +115,95 @@ fs.writeFile(path.join(__dirname, 'file.txt'), 'Some information', (err) => {
                      console.log(err);
                      throw err;
                  }
-             })
-     })
-     fs.mkdir(path.join(__dirname, 'task3', 'public', 'file', 'test'), {recursive: true}, (err) => {
-         if (err) {
-             console.log(err);
-             throw err;
-         }
-         fs.writeFile(path.join(__dirname, 'task3', 'public', 'file', 'test', 'task3.2.txt'),
-             'Завдання на практику\n' +
-             '\n' +
-             '1. Спробуйте створити якийсь файл txt, прочитайте з нього дані і одразу, дані які ви отримали запишіть їх в інший файл,\n' +
-             'в вас вийде невеликий callback hell, пізніше я вам покажу як можна це обійти, але поки зробіть так\n' +
-             '\n' +
-             '2. Створіть файл ( можете вручну ) заповніть його якимись даними\n' +
-             'Прочитайте його, скопіюйте всі дані з нього і перенесіть їх в нову папку та файл в ній, старий файл видаліть після\n' +
-             'того як все завершиться. Також вийде callback hell\n' +
-             '\n' +
-             '3. Створіть папку (можете вручну) напишіть скріпт який створить в ній якись дані (можуть бути нові папки і файли(в файли запишіть якусь дату) ) \n' +
-             'і напишіть функцію яка буде зчитувати папку і перевіряти якщо дані які в ній лежать - це файли тоді вам потрібно їх очистити, але не видаляти, якщо дані - це папки, вам потрібно їх перейменувати і додати до назви префікс _new',
-             (err) => {
-                 if (err) {
-                     console.log(err);
-                     throw err;
-                 }
-             })
-     })
-     fs.mkdir(path.join(__dirname, 'task3', 'privat', 'files', 'info', 'details'), {recursive: true}, (err) => {
-         if (err) {
-             throw err;
-         }
-         fs.writeFile(path.join(__dirname, 'task3', 'privat', 'files', 'info', 'details', 'task3.3.txt'),
-             'Some Data', (err) => {
-                 if (err) {
-                     console.log(err);
-                     throw err;
-                 }
-             })
-     })
-     fs.writeFile(path.join(__dirname, 'task3', 'file1.txt'), 'Some interesting information 1', (err) => {
-         if (err) {
-             console.log(err);
-             throw err;
-         }
-     });
-
-     fs.writeFile(path.join(__dirname, 'task3', 'file2.txt'), 'Some interesting information 2', (err) => {
-         if (err) {
-             console.log(err);
-             throw err;
-         }
-     });
-
-     fs.writeFile(path.join(__dirname, 'task3', 'file3.txt'), 'Some interesting information 3', (err) => {
-         if (err) {
-             console.log(err);
-             throw err;
-         }
-         fs.readdir(path.join(__dirname, 'task3'), (err, data) => {
-             if (err) {
-                 console.log(err);
-                 throw err;
-             }
-             console.log(data);
-             data.map(value => {
-                 fs.stat(path.join(__dirname, 'task3', `${value}`), (err, stats) => {
+                 fs.mkdir(path.join(__dirname, 'task3', 'public', 'file', 'test'), {recursive: true}, (err) => {
                      if (err) {
                          console.log(err);
                          throw err;
                      }
-                     console.log(stats.isFile());
-                     if (stats.isFile() === true) {
-                         fs.truncate(path.join(__dirname, 'task3', `${value}`), (err) => {
+                     fs.writeFile(path.join(__dirname, 'task3', 'public', 'file', 'test', 'task3.2.txt'),
+                         'Завдання на практику\n' +
+                         '\n' +
+                         '1. Спробуйте створити якийсь файл txt, прочитайте з нього дані і одразу, дані які ви отримали запишіть їх в інший файл,\n' +
+                         'в вас вийде невеликий callback hell, пізніше я вам покажу як можна це обійти, але поки зробіть так\n' +
+                         '\n' +
+                         '2. Створіть файл ( можете вручну ) заповніть його якимись даними\n' +
+                         'Прочитайте його, скопіюйте всі дані з нього і перенесіть їх в нову папку та файл в ній, старий файл видаліть після\n' +
+                         'того як все завершиться. Також вийде callback hell\n' +
+                         '\n' +
+                         '3. Створіть папку (можете вручну) напишіть скріпт який створить в ній якись дані (можуть бути нові папки і файли(в файли запишіть якусь дату) ) \n' +
+                         'і напишіть функцію яка буде зчитувати папку і перевіряти якщо дані які в ній лежать - це файли тоді вам потрібно їх очистити, але не видаляти, якщо дані - це папки, вам потрібно їх перейменувати і додати до назви префікс _new',
+                         (err) => {
                              if (err) {
                                  console.log(err);
                                  throw err;
                              }
-                         })
-                     }
-                     if (stats.isFile() === false) {
-                         fs.rename(path.join(__dirname, 'task3', `${value}`),
-                             path.join(__dirname, 'task3', `new${value}`), (err) => {
+                             fs.mkdir(path.join(__dirname, 'task3', 'privat', 'files', 'info', 'details'), {recursive: true}, (err) => {
                                  if (err) {
-                                     console.log(err);
                                      throw err;
                                  }
+                                 fs.writeFile(path.join(__dirname, 'task3', 'privat', 'files', 'info', 'details', 'task3.3.txt'),
+                                     'Some Data', (err) => {
+                                         if (err) {
+                                             console.log(err);
+                                             throw err;
+                                         }
+                                         fs.writeFile(path.join(__dirname, 'task3', 'file1.txt'), 'Some interesting information 1', (err) => {
+                                             if (err) {
+                                                 console.log(err);
+                                                 throw err;
+                                             }
+                                             fs.writeFile(path.join(__dirname, 'task3', 'file2.txt'), 'Some interesting information 2', (err) => {
+                                                 if (err) {
+                                                     console.log(err);
+                                                     throw err;
+                                                 }
+                                                 fs.writeFile(path.join(__dirname, 'task3', 'file3.txt'), 'Some interesting information 3', (err) => {
+                                                     if (err) {
+                                                         console.log(err);
+                                                         throw err;
+                                                     }
+                                                     fs.readdir(path.join(__dirname, 'task3'), (err, data) => {
+                                                         if (err) {
+                                                             console.log(err);
+                                                             throw err;
+                                                         }
+                                                         console.log(data);
+                                                         data.map(value => {
+                                                             fs.stat(path.join(__dirname, 'task3', `${value}`), (err, stats) => {
+                                                                 if (err) {
+                                                                     console.log(err);
+                                                                     throw err;
+                                                                 }
+                                                                 console.log(stats.isFile());
+                                                                 if (stats.isFile() === true) {
+                                                                     fs.truncate(path.join(__dirname, 'task3', `${value}`), (err) => {
+                                                                         if (err) {
+                                                                             console.log(err);
+                                                                             throw err;
+                                                                         }
+                                                                     })
+                                                                 }
+                                                                 if (stats.isFile() === false) {
+                                                                     fs.rename(path.join(__dirname, 'task3', `${value}`),
+                                                                         path.join(__dirname, 'task3', `new${value}`), (err) => {
+                                                                             if (err) {
+                                                                                 console.log(err);
+                                                                                 throw err;
+                                                                             }
+                                                                         })
+                                                                 }
+                                                             })
+                                                         })
+                                                     })
+                                                 });
+                                             });
+                                         });
+                                     })
                              })
-                     }
+                         })
                  })
              })
-         })
-     });
+     })
  })
 
 

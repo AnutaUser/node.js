@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: aqua;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            margin-left: 40%;
+            margin-top: 17%;
+        }
+
+        .label {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            background: lightcyan;
+        }
+        input {
+            background: lightcyan;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<form action="/login" method="post" class="form">
+    <label class="label">FirstName: <input type="text" name="firstName" placeholder="FirstName"></label>
+    <label class="label">LastName: <input type="text" name="lastName" placeholder="LastName"></label>
+    <label class="label">City: <input type="text" name="city" placeholder="City"></label>
+    <label class="label">Age: <input type="number" name="age" placeholder="Age"></label>
+    <label class="label">Email: <input type="text" name="email" placeholder="Email"></label>
+    <label class="label">Password: <input type="text" name="password" placeholder="Password"></label>
+    <input type="submit" name="on">
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: aqua;
+        }
+        .user_card {
+            border: 2px solid #0059ff;
+            border-radius: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 200px;
+            background: lightcyan;
+        }
+        .users {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            row-gap: 10px;
+            justify-content: space-evenly;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="users">
+        {{#each users}}
+            <div class="user_card">
+                <div>FirstName: {{this.firstName}}</div>
+                <div>LastName: {{this.lastName}}</div>
+                <div>City: {{this.city}}</div>
+                <div>Age: {{this.age}}</div>
+                <div>Email: {{this.email}}</div>
+                <div>Password: {{this.password}}</div>
+            </div>
+            {{/each}}
+
+    </div>
+
+</body>
+</html>

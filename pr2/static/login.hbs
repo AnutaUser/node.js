@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport'
+          content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        body {
+            background: rgba(204, 50, 183, 0.76);
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            width: 300px;
+            top: 50%;
+            left: 50%;
+            margin: -140px 0 0 -150px;
+        }
+        .input {
+            height: 25px;
+            margin-bottom: 4px;
+            border: 2px solid rebeccapurple;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action='/login' method='post' class='form'>
+        <input type='text' name='firstName' placeholder='FirstName'  class="input">
+        <input type='text' name='lastName' placeholder='LastName' class="input">
+        <input type='text' name='city' placeholder='City' class="input">
+        <input type='number' name='age' placeholder='Age' class="input">
+        <input type='text' name='email' placeholder='Email' class="input">
+        <input type='text' name='password' placeholder='Password' class="input">
+        <input type='submit' name='Save' class="input">
+    </form>
+
+</body>
+</html>

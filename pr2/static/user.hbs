@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgba(204, 50, 183, 0.76);
+        }
+        .user_card {
+            border: 3px solid rebeccapurple;
+            border-radius: 10px;
+            width: 300px;
+            background: #f5d3f4;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            font-size: 18px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="user_card">
+            <div><b>ID:</b> {{user.id}}</div>
+            <div>FirstName: {{user.firstName}}</div>
+            <div>LastName: {{user.lastName}}</div>
+            <div>City: {{user.city}}</div>
+            <div>Age: {{user.age}}</div>
+            <form action="/users/{{user.id}}" method="post">
+                <input type="submit" value="delete">
+            </form>
+        </div>
+</body>
+</html>

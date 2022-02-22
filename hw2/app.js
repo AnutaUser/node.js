@@ -43,8 +43,7 @@ app.post('/login', ({body}, res) => {
         res.redirect('/error');
         return;
     }
-    // res.render('users')
-    users.push({...body, id: users.lenght ? users[users.lenght - 1].id + 1 : 1});
+    users.push({...body, id: users.length ? users[users.length - 1].id + 1 : 1});
     res.redirect('/users');
 });
 
@@ -61,7 +60,6 @@ app.get('/users/:userId', ({params}, res) => {
         return;
     }
     res.render('user', {user})
-    // res.render('user[userid]')
 });
 
 // const users = [
